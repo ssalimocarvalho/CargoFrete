@@ -1,69 +1,60 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cargo Frete | 3PL Freight Forwarder & Ship Broker</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CDN (apenas se ainda não estiver configurado via PostCSS) -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+
     <script>
       tailwind.config = {
         theme: {
           extend: {
             colors: {
-              'cargo-blue': '#002B49',
-              'cargo-accent': '#007BFF',
-              'cargo-blue-light': '#E6F0FF',
+              "cargo-blue": "#002B49",
+              "cargo-accent": "#007BFF",
+              "cargo-blue-light": "#E6F0FF"
             }
           }
         }
       }
     </script>
+
     <style>
-        :root {
-            --cargo-blue: #002B49;
-            --cargo-accent: #007BFF;
-            --cargo-gray: #333F48;
-            --cargo-light: #F8FAFC;
-        }
-        body {
-            font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
-            background-color: #ffffff;
-            color: var(--cargo-gray);
-        }
-        .font-logo { font-family: 'Montserrat', sans-serif; }
-        .text-cargo-blue { color: var(--cargo-blue); }
-        .bg-cargo-blue { background-color: var(--cargo-blue); }
-        .text-cargo-accent { color: var(--cargo-accent); }
-        .bg-cargo-accent { background-color: var(--cargo-accent); }
-        .bg-cargo-gray { background-color: var(--cargo-gray); }
-        
-        .blue-gradient {
-            background: linear-gradient(135deg, #002B49 0%, #0056b3 100%);
-        }
-        .cargo-card-shadow {
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-        }
+      body {
+        font-family: "Inter", sans-serif;
+        scroll-behavior: smooth;
+        background-color: #ffffff;
+      }
+
+      .font-logo {
+        font-family: "Montserrat", sans-serif;
+      }
+
+      .blue-gradient {
+        background: linear-gradient(135deg, #002b49 0%, #0056b3 100%);
+      }
+
+      .cargo-card-shadow {
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+      }
     </style>
-<script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@19.0.0",
-    "react/": "https://esm.sh/react@19.0.0/",
-    "react-dom": "https://esm.sh/react-dom@19.0.0",
-    "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
-    "lucide-react": "https://esm.sh/lucide-react@0.474.0?deps=react@19.0.0",
-    "framer-motion": "https://esm.sh/framer-motion@11.11.11?deps=react@19.0.0,react-dom@19.0.0&bundle",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
-  }
-}
-</script>
-</head>
-<body class="overflow-x-hidden">
+  </head>
+
+  <body class="overflow-x-hidden">
     <div id="root"></div>
-</body>
+
+    <!-- Entrada do Vite -->
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
