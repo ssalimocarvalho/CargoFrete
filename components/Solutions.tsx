@@ -12,7 +12,6 @@ const Solutions: React.FC = () => {
 
   return (
     <section className="py-32 bg-cargo-blue text-white overflow-hidden relative" id="sectors">
-      {/* Decorative background element */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-white/5 -skew-x-12 translate-x-1/4"></div>
       
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
@@ -58,17 +57,15 @@ const Solutions: React.FC = () => {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="p-2 border-2 border-white/10 relative group overflow-hidden rounded-sm">
+            <div className="p-2 border-2 border-white/10 relative group overflow-hidden">
               <img 
-                src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=1200" 
-                alt="Industrial Logistics" 
-                className="w-full h-[500px] object-cover group-hover:scale-105 transition-all duration-700"
+                src="https://images.unsplash.com/photo-1590496793902-35634d012421?q=80&w=2000" 
+                alt="Logistics" 
+                className="w-full grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
               />
-              {/* Lighter overlay to ensure visibility on the dark section background */}
-              <div className="absolute inset-0 bg-cargo-blue/20 group-hover:bg-transparent transition-all"></div>
+              <div className="absolute inset-0 bg-cargo-blue/40 group-hover:bg-transparent transition-all"></div>
             </div>
             
-            {/* Callout box */}
             <div className="absolute -bottom-10 -right-10 bg-white text-cargo-blue p-10 hidden xl:block shadow-2xl border-r-8 border-cargo-accent">
               <div className="text-[10px] font-black uppercase tracking-widest mb-2 text-cargo-accent">{t.callout}</div>
               <div className="text-4xl font-black font-logo">{t.days}</div>

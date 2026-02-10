@@ -9,9 +9,10 @@ const Hero: React.FC = () => {
   const t = TRANSLATIONS[lang].hero;
   
   const images = [
-    "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?q=80&w=2000",
-    "https://images.unsplash.com/photo-1501700493788-fa1a4fc9fe62?q=80&w=2000",
-    "https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=2000"
+    "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?q=80&w=2000", // Requested Crane Image
+    "https://images.unsplash.com/photo-1501700493788-fa1a4fc9fe62?q=80&w=2000", // Modern Truck Highway
+    "https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=2000", // Global Logistics
+    "https://images.unsplash.com/photo-1494412651409-8963ce7935a7?q=80&w=2000"  // Port Infrastructure
   ];
 
   const [currentImage, setCurrentImage] = useState(0);
@@ -24,43 +25,61 @@ const Hero: React.FC = () => {
   }, [images.length]);
 
   return (
-    <section className="relative min-h-[600px] lg:h-[80vh] flex flex-col justify-center overflow-hidden bg-cargo-blue" id="home">
+    <section className="relative h-screen min-h-[600px] flex items-center overflow-hidden bg-cargo-blue" id="home">
+      {/* Background Carousel */}
       <div className="absolute inset-0 z-0">
         <AnimatePresence mode="wait">
-          <motion.div key={currentImage} initial={{ opacity: 0 }} animate={{ opacity: 0.4 }} exit={{ opacity: 0 }} transition={{ duration: 1 }} className="absolute inset-0 w-full h-full">
-            <img src={images[currentImage]} className="w-full h-full object-cover grayscale" alt="Logistics" />
+          <motion.div
+            key={currentImage}
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ opacity: 0.45, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.5, ease: "easeOut" }}
+            className="absolute inset-0 w-full h-full"
+          >
+            <img 
+              src={images[currentImage]} 
+              className="w-full h-full object-cover grayscale" 
+              alt="Logistics Operation" 
+            />
           </motion.div>
         </AnimatePresence>
-        <div className="absolute inset-0 bg-gradient-to-b from-cargo-blue/60 via-cargo-blue/40 to-white/10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-cargo-blue via-cargo-blue/70 to-transparent"></div>
       </div>
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
-        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="max-w-3xl">
-          <h1 className="text-[40px] lg:text-[64px] font-black text-white leading-tight mb-6 uppercase tracking-tight">
-            {t.welcome} <span className="text-cargo-accent">CargoFrete</span>
-          </h1>
-          <p className="text-xl text-slate-100 mb-10 max-w-xl leading-relaxed font-light">
-            {t.desc}
-          </p>
-          <div className="flex flex-wrap gap-4">
-            <button 
-              className="bg-cargo-accent text-white px-8 py-4 rounded-sm font-bold text-xs hover:bg-white hover:text-cargo-blue transition-all shadow-xl uppercase tracking-widest"
-              onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              {t.cta}
-            </button>
-            <button 
-              className="border border-white/20 text-white px-8 py-4 rounded-sm font-bold text-xs hover:bg-white/10 transition-all uppercase tracking-widest"
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              {t.contact}
-            </button>
-          </div>
-        </motion.div>
+        <div className="max-w-2xl">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h1 className="text-[24px] lg:text-[32px] font-black text-white leading-tight mb-6 uppercase tracking-tight">
+              {t.title}
+            </h1>
+            <p className="text-base lg:text-lg text-slate-300 mb-8 max-w-xl leading-relaxed font-light">
+              {t.desc}
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <button 
+                className="bg-cargo-accent text-white px-6 py-3 rounded-sm font-bold text-xs hover:bg-white hover:text-cargo-blue transition-all shadow-xl uppercase tracking-widest"
+                onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                {t.cta}
+              </button>
+              <button 
+                className="border border-white/20 text-white px-6 py-3 rounded-sm font-bold text-xs hover:bg-white/10 transition-all uppercase tracking-widest"
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                {t.contact}
+              </button>
+            </div>
+          </motion.div>
+        </div>
       </div>
 
       {/* Slide Indicators */}
-      <div className="absolute bottom-10 left-6 lg:left-12 flex gap-3 z-20">
+      <div className="absolute bottom-10 left-12 flex gap-3 z-20">
         {images.map((_, idx) => (
           <button
             key={idx}
