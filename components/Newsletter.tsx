@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, RefreshCw } from 'lucide-react';
 import { useLanguage } from '../App';
 import { TRANSLATIONS } from '../constants';
 
@@ -10,68 +10,64 @@ const ContactForm: React.FC = () => {
   const t = TRANSLATIONS[lang].contact;
 
   return (
-    <section className="py-24 bg-slate-400" id="contact">
+    <section className="py-24 bg-slate-50 relative overflow-hidden" id="contact">
       <div className="container mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="text-white"
-          >
-            <h2 className="text-4xl lg:text-6xl font-bold mb-10 leading-tight uppercase tracking-tighter">
-              {t.title}
-            </h2>
-            <div className="space-y-10">
-              <div className="flex items-start gap-6">
-                <div className="bg-cargo-blue p-4 text-white">
-                   <Phone size={24} />
-                </div>
-                <div>
-                  <h4 className="text-lg font-bold uppercase mb-1">{t.phone}</h4>
-                  <p className="text-white/80">+258 84 371 9441</p>
-                </div>
+        <div className="text-center mb-16">
+          <span className="text-cargo-accent font-black text-[10px] tracking-widest uppercase mb-4 block">{t.tag}</span>
+          <h2 className="text-3xl lg:text-4xl font-black text-slate-900 uppercase tracking-tight">{t.title}</h2>
+        </div>
+
+        <div className="grid lg:grid-cols-3 gap-8 mb-20">
+          {[
+            { icon: MapPin, title: t.office, val: "4821 Ridge Top Cir, Pemba, Cabo Delgado, MZ" },
+            { icon: Phone, title: t.phone, val: "+258 84 371 9441" },
+            { icon: Mail, title: t.email, val: "info@cargofrete.co.mz" }
+          ].map((item, i) => (
+            <div key={i} className="bg-white p-12 text-center border border-slate-100 shadow-sm hover:shadow-xl transition-all group">
+              <div className="w-16 h-16 bg-cargo-accent rounded-full flex items-center justify-center mx-auto mb-6 text-white group-hover:scale-110 transition-transform">
+                <item.icon size={28} />
               </div>
-              <div className="flex items-start gap-6">
-                <div className="bg-cargo-blue p-4 text-white">
-                   <Mail size={24} />
-                </div>
-                <div>
-                  <h4 className="text-lg font-bold uppercase mb-1">{t.email}</h4>
-                  <p className="text-white/80">management@cargofrete.co.mz</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-6">
-                <div className="bg-cargo-blue p-4 text-white">
-                   <MapPin size={24} />
-                </div>
-                <div>
-                  <h4 className="text-lg font-bold uppercase mb-1">{t.office}</h4>
-                  <p className="text-white/80">Pemba – Cabo Delgado – Moçambique</p>
-                </div>
-              </div>
+              <h4 className="text-lg font-black uppercase mb-2 text-slate-900">{item.title}</h4>
+              <p className="text-sm text-slate-500 whitespace-pre-line">{item.val}</p>
             </div>
-          </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="bg-white p-12 rounded-sm shadow-2xl"
-          >
+          ))}
+        </div>
+
+        <div className="bg-white shadow-2xl rounded-sm overflow-hidden grid lg:grid-cols-12 items-stretch">
+          <div className="lg:col-span-5 bg-cargo-blue p-0">
+             <img src="https://images.unsplash.com/photo-1621905252507-b35482cd74b4?q=80&w=1200" className="w-full h-full object-cover" alt="Contact" />
+          </div>
+          <div className="lg:col-span-7 p-12">
+            <h3 className="text-2xl font-black text-slate-900 uppercase mb-8 border-b border-slate-100 pb-6">{t.form.title}</h3>
             <form className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
-                <input type="text" placeholder={t.form.fname} className="w-full bg-slate-50 border border-slate-200 px-6 py-4 outline-none focus:border-cargo-accent transition-all" required />
-                <input type="text" placeholder={t.form.lname} className="w-full bg-slate-50 border border-slate-200 px-6 py-4 outline-none focus:border-cargo-accent transition-all" required />
+                <div className="space-y-2">
+                  <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{t.form.name}</label>
+                  <input type="text" placeholder={t.form.fname} className="w-full border-b border-slate-200 py-3 outline-none focus:border-cargo-accent transition-all text-sm" required />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{t.form.phoneLabel}</label>
+                  <input type="text" placeholder="+258 ..." className="w-full border-b border-slate-200 py-3 outline-none focus:border-cargo-accent transition-all text-sm" required />
+                </div>
               </div>
-              <input type="email" placeholder={t.form.email} className="w-full bg-slate-50 border border-slate-200 px-6 py-4 outline-none focus:border-cargo-accent transition-all" required />
-              <input type="text" placeholder={t.form.subject} className="w-full bg-slate-50 border border-slate-200 px-6 py-4 outline-none focus:border-cargo-accent transition-all" required />
-              <textarea placeholder={t.form.message} rows={4} className="w-full bg-slate-50 border border-slate-200 px-6 py-4 outline-none focus:border-cargo-accent transition-all" required></textarea>
-              <button className="bg-cargo-blue text-white w-full py-5 rounded-sm font-bold text-lg uppercase tracking-widest hover:bg-cargo-accent transition-all">
-                {t.form.submit}
-              </button>
+              <div className="space-y-2">
+                <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{t.form.emailLabel}</label>
+                <input type="email" placeholder={t.form.emailLabel} className="w-full border-b border-slate-200 py-3 outline-none focus:border-cargo-accent transition-all text-sm" required />
+              </div>
+              <div className="space-y-2">
+                <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{t.form.descLabel}</label>
+                <textarea placeholder={t.form.note} rows={2} className="w-full border-b border-slate-200 py-3 outline-none focus:border-cargo-accent transition-all text-sm" required></textarea>
+              </div>
+              <div className="flex gap-4 pt-6">
+                <button type="reset" className="flex-1 border border-slate-200 text-slate-400 py-4 font-black text-xs uppercase tracking-widest flex items-center justify-center gap-2 hover:bg-slate-50 transition-all">
+                  <RefreshCw size={14} /> {t.form.refresh}
+                </button>
+                <button type="submit" className="flex-[2] bg-cargo-accent text-white py-4 font-black text-xs uppercase tracking-widest hover:bg-cargo-blue transition-all shadow-lg shadow-cargo-accent/20">
+                  {t.form.submit}
+                </button>
+              </div>
             </form>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
