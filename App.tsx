@@ -1,5 +1,6 @@
 
 import React, { createContext, useState, useContext } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import ServicesCircle from './components/Segments';
@@ -11,6 +12,7 @@ import ContactForm from './components/Newsletter';
 import Footer from './components/Footer';
 import WhyChoose from './components/WhyChoose';
 import Solutions from './components/Solutions';
+import InfoLongSection from './components/Warehousing';
 
 type Language = 'pt' | 'en';
 
@@ -31,31 +33,34 @@ function App() {
 
   return (
     <LanguageContext.Provider value={{ lang, setLang }}>
-      <div className="min-h-screen selection:bg-cargo-accent selection:text-white bg-white">
-        <Header />
-        <main>
-          <Hero />
-          <ServicesCircle />
-          <StatsBar />
-          <WhyChoose />
-          <AboutSplit />
-          <ServiceDetail />
-          <Solutions />
-          <Testimonials />
-          <ContactForm />
-        </main>
-        <Footer />
-        
-        {/* Scroll to top decorative button */}
-        <button 
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="fixed bottom-8 right-8 z-40 bg-cargo-blue p-3.5 rounded-full shadow-2xl text-white hover:bg-cargo-accent transition-all group active:scale-90"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
-            <path d="m18 15-6-6-6 6"/>
-          </svg>
-        </button>
-      </div>
+      <Router>
+        <div className="min-h-screen selection:bg-cargo-accent selection:text-white bg-white flex flex-col">
+          <Header />
+          <main className="flex-grow">
+            <Hero />
+            <ServicesCircle />
+            <StatsBar />
+            <WhyChoose />
+            <AboutSplit />
+            <ServiceDetail />
+            <Solutions />
+            <InfoLongSection />
+            <Testimonials />
+            <ContactForm />
+          </main>
+          <Footer />
+          
+          <button 
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="fixed bottom-8 right-8 z-50 bg-cargo-blue p-3.5 rounded-full shadow-2xl text-white hover:bg-cargo-accent transition-all group active:scale-90"
+            aria-label="Voltar ao topo"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
+              <path d="m18 15-6-6-6 6"/>
+            </svg>
+          </button>
+        </div>
+      </Router>
     </LanguageContext.Provider>
   );
 }

@@ -1,7 +1,7 @@
 
 import { ServiceSegment, StatItem } from './types';
 
-export const COMPANY_NAME = "CargoFrete";
+export const COMPANY_NAME = "Cargo Frete";
 export const LOGO_URL = "https://i.postimg.cc/30FRYwSX/Parceiros-11.png";
 
 export const SECTORS_LIST = {
@@ -45,7 +45,7 @@ export const TRANSLATIONS = {
     stats: {
       title: "Volume de ordens e mercadorias no último ano",
       subtitle: "NÓS SOMOS OS MELHORES",
-      desc: "A CargoFrete coloca sempre a experiência do cliente em primeiro lugar, garantindo responsabilidade total.",
+      desc: "A Cargo Frete coloca sempre a experiência do cliente em primeiro lugar, garantindo responsabilidade total.",
       sea: "Cargas via Mar",
       air: "Cargas via Ar",
       inland: "Cargas Terrestres",
@@ -80,7 +80,7 @@ export const TRANSLATIONS = {
     about: {
       tag: "40 Anos de Excelência",
       title: "Referência em Shipping no Norte de Moçambique",
-      p1: "A CargoFrete é a referência máxima no mercado de shipping brokerage no Norte de Moçambique.",
+      p1: "A Cargo Frete é a referência máxima no mercado de shipping brokerage no Norte de Moçambique.",
       p2: "Garantimos que sua carga chegue ao destino com segurança, seja via mar, terra ou ar.",
       cta: "Saber Mais"
     },
@@ -102,7 +102,7 @@ export const TRANSLATIONS = {
       title: "O que dizem os nossos clientes",
       desc: "Confiança construída através de décadas de serviço de excelência em Moçambique.",
       data: [
-        { text: "A CargoFrete tem sido um parceiro vital para nossas operações de mineração em Tete. Eficiência absoluta.", name: "António Silva", title: "Gestor Logístico" },
+        { text: "A Cargo Frete tem sido um parceiro vital para nossas operações de mineração em Tete. Eficiência absoluta.", name: "António Silva", title: "Gestor Logístico" },
         { text: "A precisão no manuseio de carga de projeto é o que os diferencia no mercado moçambicano.", name: "Maria Santos", title: "Diretora de Operações" },
         { text: "Excelente suporte ao cliente e monitoramento constante. Recomendo fortemente.", name: "João Pereira", title: "Importador" },
         { text: "Serviço de despacho aduaneiro rápido e sem complicações em Pemba.", name: "Lucia Mondlane", title: "Empresária" }
@@ -117,7 +117,7 @@ export const TRANSLATIONS = {
       cta: "Consulte Disponibilidade"
     },
     whyChoose: {
-      title: "Porquê escolher a CargoFrete?",
+      title: "Porquê escolher a Cargo Frete?",
       items: [
         { title: "Cobertura Regional", text: "Presença forte em todo o Norte de Moçambique e conexões na África Oriental." },
         { title: "Agilidade", text: "Processos simplificados para garantir o menor tempo de trânsito possível." },
@@ -151,8 +151,8 @@ export const TRANSLATIONS = {
       newsDesc: "Inscreva-se para receber as últimas notícias do sector.",
       quickLinks: "Links Rápidos",
       emailPlaceholder: "Seu Email",
-      rights: "© 2025 CargoFrete Logística S.A. Todos os direitos reservados.",
-      dev: "Desenvolvido com excelência pela equipa Digital CargoFrete",
+      rights: "© 2025 Cargo Frete Logística S.A. Todos os direitos reservados.",
+      dev: "Desenvolvido com excelência pela equipa Digital Cargo Frete",
       links: ["Sobre", "Serviços", "Frota", "Privacidade"]
     }
   },
@@ -191,7 +191,7 @@ export const TRANSLATIONS = {
     stats: {
       title: "Number of orders and goods in the past year",
       subtitle: "WE ARE THE BEST",
-      desc: "CargoFrete always puts the customer's experience first, ensuring total responsibility.",
+      desc: "Cargo Frete always puts the customer's experience first, ensuring total responsibility.",
       sea: "Goods from Sea",
       air: "Goods from Air",
       inland: "Goods from Inland",
@@ -226,7 +226,7 @@ export const TRANSLATIONS = {
     about: {
       tag: "40 Years of Excellence",
       title: "Shipping Benchmark in Northern Mozambique",
-      p1: "CargoFrete is the ultimate reference in the shipping brokerage market in Northern Mozambique.",
+      p1: "Cargo Frete is the ultimate reference in the shipping brokerage market in Northern Mozambique.",
       p2: "We ensure your cargo reaches its destination safely, whether by sea, land, or air.",
       cta: "Learn More"
     },
@@ -248,7 +248,7 @@ export const TRANSLATIONS = {
       title: "What our clients say",
       desc: "Trust built through decades of excellent service in Mozambique.",
       data: [
-        { text: "CargoFrete has been a vital partner for our mining operations in Tete. Absolute efficiency.", name: "António Silva", title: "Logistics Manager" },
+        { text: "Cargo Frete has been a vital partner for our mining operations in Tete. Absolute efficiency.", name: "António Silva", title: "Logistics Manager" },
         { text: "The precision in handling project cargo is what sets them apart in the Mozambican market.", name: "Maria Santos", title: "Operations Director" },
         { text: "Excellent customer support and constant monitoring. Highly recommend.", name: "João Pereira", title: "Importer" },
         { text: "Fast and hassle-free customs clearance service in Pemba.", name: "Lucia Mondlane", title: "Entrepreneur" }
@@ -263,7 +263,7 @@ export const TRANSLATIONS = {
       cta: "Check Availability"
     },
     whyChoose: {
-      title: "Why choose CargoFrete?",
+      title: "Why choose Cargo Frete?",
       items: [
         { title: "Regional Coverage", text: "Strong presence throughout Northern Mozambique and East Africa connections." },
         { title: "Agility", text: "Streamlined processes to ensure the lowest possible transit time." },
@@ -297,8 +297,8 @@ export const TRANSLATIONS = {
       newsDesc: "Sign up to receive the latest sector news.",
       quickLinks: "Quick Links",
       emailPlaceholder: "Your Email",
-      rights: "© 2025 CargoFrete Logística S.A. All rights reserved.",
-      dev: "Developed with excellence by CargoFrete Digital Team",
+      rights: "© 2025 Cargo Frete Logística S.A. All rights reserved.",
+      dev: "Developed with excellence by Cargo Frete Digital Team",
       links: ["About Us", "Services", "Fleet", "Privacy Policy"]
     }
   }
